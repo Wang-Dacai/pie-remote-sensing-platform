@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4EA46972-8CA2-458C-BFBE-B652CB9926D5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PieRemoteSensingPlatform</RootNamespace>
+    <AssemblyName>PieRemoteSensingPlatform</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PieSdkBinDir Condition="'$(PieSdkBinDir)' == ''">$(PIE_SDK_BIN)</PieSdkBinDir>
+    <DevExpressBinDir Condition="'$(DevExpressBinDir)' == ''">$(PieSdkBinDir)</DevExpressBinDir>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v18.1">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(DevExpressBinDir)\DevExpress.BonusSkins.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v18.1">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(DevExpressBinDir)\DevExpress.Data.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Images.v18.1">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(DevExpressBinDir)\DevExpress.Images.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v18.1">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(DevExpressBinDir)\DevExpress.Utils.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v18.1">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(DevExpressBinDir)\DevExpress.XtraBars.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v18.1">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(DevExpressBinDir)\DevExpress.XtraEditors.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.3DAnalyst, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.AxControls, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
+    <Reference Include="ESRI.ArcGIS.Carto, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Controls, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesRaster, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Display, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geodatabase, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geometry, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.GlobeCore, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Output, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.SpatialAnalyst, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.System, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.SystemUI, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Version, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86" />
+    <Reference Include="PIE.AdapterUI">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(PieSdkBinDir)\PIE.AdapterUI.dll</HintPath>
+    </Reference>
+    <Reference Include="PIE.AdapterUICLR">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(PieSdkBinDir)\PIE.AdapterUICLR.dll</HintPath>
+    </Reference>
+    <Reference Include="PIE.Carto">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(PieSdkBinDir)\PIE.Carto.dll</HintPath>
+    </Reference>
+    <Reference Include="PIE.CommonAlgo">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(PieSdkBinDir)\PIE.CommonAlgo.dll</HintPath>
+    </Reference>
+    <Reference Include="PIE.CommonMP">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(PieSdkBinDir)\PIE.CommonMP.dll</HintPath>
+    </Reference>
+    <Reference Include="PIE.Configuration">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(PieSdkBinDir)\PIE.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="PIE.Controls">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(PieSdkBinDir)\PIE.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="PIE.ControlsEx">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(PieSdkBinDir)\PIE.ControlsEx.dll</HintPath>
+    </Reference>
+    <Reference Include="PIE.ControlsUI">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(PieSdkBinDir)\PIE.ControlsUI.dll</HintPath>
+    </Reference>
+    <Reference Include="PIE.DataSource">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(PieSdkBinDir)\PIE.DataSource.dll</HintPath>
+    </Reference>
+    <Reference Include="PIE.Display">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(PieSdkBinDir)\PIE.Display.dll</HintPath>
+    </Reference>
+    <Reference Include="PIE.Framework">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(PieSdkBinDir)\PIE.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="PIE.Geometry">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(PieSdkBinDir)\PIE.Geometry.dll</HintPath>
+    </Reference>
+    <Reference Include="PIE.Plugin">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(PieSdkBinDir)\PIE.Plugin.dll</HintPath>
+    </Reference>
+    <Reference Include="PIE.Plugin.BatchDealTools">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(PieSdkBinDir)\PIE.Plugin.BatchDealTools.dll</HintPath>
+    </Reference>
+    <Reference Include="PIE.Plugin.CloudFlash">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(PieSdkBinDir)\PIE.Plugin.CloudFlash.dll</HintPath>
+    </Reference>
+    <Reference Include="PIE.Plugin.FY4DataWrapper">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(PieSdkBinDir)\PIE.Plugin.FY4DataWrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="PIE.Plugin.ImagePreProcess">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(PieSdkBinDir)\PIE.Plugin.ImagePreProcess.dll</HintPath>
+    </Reference>
+    <Reference Include="PIE.Plugin.ImageTransform">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(PieSdkBinDir)\PIE.Plugin.ImageTransform.dll</HintPath>
+    </Reference>
+    <Reference Include="PIE.Plugin.L2ProjectionPlugin">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(PieSdkBinDir)\PIE.Plugin.L2ProjectionPlugin.dll</HintPath>
+    </Reference>
+    <Reference Include="PIE.Plugin.MapSubdivision">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(PieSdkBinDir)\PIE.Plugin.MapSubdivision.dll</HintPath>
+    </Reference>
+    <Reference Include="PIE.Plugin.MonitorAnalysis">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(PieSdkBinDir)\PIE.Plugin.MonitorAnalysis.dll</HintPath>
+    </Reference>
+    <Reference Include="PIE.Plugin.UtilityTools">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(PieSdkBinDir)\PIE.Plugin.UtilityTools.dll</HintPath>
+    </Reference>
+    <Reference Include="PIE.SystemAlgo">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(PieSdkBinDir)\PIE.SystemAlgo.dll</HintPath>
+    </Reference>
+    <Reference Include="PIE.SystemUI">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(PieSdkBinDir)\PIE.SystemUI.dll</HintPath>
+    </Reference>
+    <Reference Include="PIE.Utility">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(PieSdkBinDir)\PIE.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\DistanceClassificationCommand.cs" />
+    <Compile Include="Commands\MaximumLikelihoodClassificationCommand.cs" />
+    <Compile Include="Commands\SupervisedClassificationCommandBase.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RemoteSensingIndexDefinition.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Services\BandOperationService.cs" />
+    <Compile Include="Services\PieAlgorithmRunner.cs" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\App_Sys_EnvSet.png" />
+    <None Include="Resources\DataLoader_DataManger.png" />
+    <None Include="Resources\View_SLC_Map.png" />
+    <None Include="Resources\ui_ImageMosaic.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
